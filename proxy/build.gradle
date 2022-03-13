@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+jar {
+    manifest {
+        attributes("Agent-Class": "me.kazechin.bytebuddy.agent.ToStringAgent",
+                "Can-Redefine-Classes": true,
+                "Can-Retransform-Classes": true,
+                "Premain-Class": "me.kazechin.bytebuddy.agent.ToStringAgent",
+        )
+    }
+}
+
+group 'me.kazechin'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'net.bytebuddy:byte-buddy:1.12.8'
+    implementation 'net.bytebuddy:byte-buddy-agent:1.12.8'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}

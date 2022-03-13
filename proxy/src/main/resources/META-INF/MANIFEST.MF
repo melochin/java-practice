@@ -1,0 +1,4 @@
+Agent-Class: me.kazechin.bytebuddy.agent.ToStringAgent
+Can-Redefine-Classes: true
+Can-Retransform-Classes: true
+Premain-Class: me.kazechin.bytebuddy.agent.ToStringAgent
